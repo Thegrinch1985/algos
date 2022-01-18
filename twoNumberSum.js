@@ -1,18 +1,17 @@
 function twoNumberSum(array, targetSum) {
-  for (let i = 0; i < array.length - 1; i++) {
-    for (let i = 0; i < array.length - 1; i++) {
-      const fn = array[i];
 
-      for (let j = i + 1; i < array.length; j++) {
-        const sn = array[j];
+	for (let i = 0; i < array.length -1; i++){
+		const fn = array[i];
+		for (let j = i+1; j < array.length; j++){
+			const sn = array[j];
+			if(fn + sn  === targetSum){
+				return [fn, sn]
+			}
+		}
+	}
 
-        if(sn + fn === targetSum){
-            return [fn, sn];
-        }
-      }
-    }
-    return []
-  }
+			return [];
+	
 }
 
 
