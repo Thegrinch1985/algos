@@ -1,15 +1,6 @@
-reverse a string without using reverse/split functions
-
-median of a sorted array
-
-hashmaps datastructures
 
 
-First was to do a bunch of string manipulation through implementing a custom comparator so that strings get ordered a certain way.
 
-Second was to do a BFS traverse of a 2D matrix with memoization to find the shortest weighted path.
-
-How do you find the level of a binary tree?
 
 Look up for palindroms
 
