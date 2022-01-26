@@ -27,35 +27,27 @@ class LinkedList {
   }
 }
 
-function mergeLinkedLists(headOne, headTwo) {
+function reverseLinkedList(head) {
   // Write your code here.
-  let one = headOne;
-  let prev = null;
-  let two = headTwo;
+  let one = null;
+  let two = head;
 
-  while (one !== null && two !== null) {
-    if (one.value < two.value) {
-      prev = one;
-      one = one.next;
-    } else {
-      if (prev !== null) prev.next = two;
-      prev = two;
-      two = two.next;
-      prev.next = one;
-    }
+  while (two !== null) {
+    let three = two.next;
+    two.next = one;
+    one = two;
+    two = three;
   }
-  if (one === null) prev.next = two;
-  return headOne.value < headTwo.value ? headOne : headTwo;
+
+  return one;
 }
 
 // Do not edit the lines below.
 exports.LinkedList = LinkedList;
-exports.mergeLinkedLists = mergeLinkedLists;
+exports.reverseLinkedList = reverseLinkedList;
 
-const list1 = new LinkedList(2).addMany([6, 7, 8]);
 const list2 = new LinkedList(1).addMany([3, 4, 5, 9, 10]);
 
-console.log(list1.getNodesInArray());
 console.log(list2.getNodesInArray());
-const list3 = mergeLinkedLists(list1, list2);
+const list3 = reverseLinkedList(list2);
 console.log(list3.getNodesInArray());
