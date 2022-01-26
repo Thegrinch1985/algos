@@ -24,5 +24,5 @@ function sortedSquaredArray(array) {
 // Do not edit the line below.
 exports.sortedSquaredArray = sortedSquaredArray;
 
-let arr = [1, 2, -10, 3, 5, 6, 8, 9];
-console.log(sortedSquaredArray(arr));
+let arr1 = [1, 2, -10, 3, 5, 6, 8, 9];
+console.log(sortedSquaredArray(arr1));
