@@ -27,31 +27,38 @@ class LinkedList {
   }
 }
 
-function insertANodeIntoLinkedList(linkedList, data, position) {
-  let one = linkedList;
-  let temp = null;
-  let count = 0;
-  let newNode = new LinkedList(data);
 
-  while (one !== null && count < position) {
-    count++;
-    one = one.next;
+function insertNodeAtPosition(head, data, position) {
+  let count = 0
+  let node
+
+  if (!head) {
+    node = {data, next: null}
+    return node
   }
-  if (count == position) {
-    temp = one;
-    one = newNode;
-    one.next = temp;
-    count++;
+  
+  node = head
+
+  while (node) {
+    if (count === position - 1) {
+      const prevNode = node
+      const newNode = {data:data, next: prevNode.next}
+      prevNode.next = newNode
+      return head
+   }
+   node = node.next
+   count++
   }
-  return one;
+
+  return null
 }
 
 // Do not edit the lines below.
 exports.LinkedList = LinkedList;
-exports.insertANodeIntoLinkedList = insertANodeIntoLinkedList;
+exports.insertNodeAtPosition = insertNodeAtPosition;
 
 const remove = new LinkedList(1).addMany([2, 3, 4, 5]);
 
 // console.log(remove.getNodesInArray());c
-const list3 = insertANodeIntoLinkedList(remove, 99, 4);
+const list3 = insertNodeAtPosition(remove, 99, 1);
 console.log(list3.getNodesInArray());
