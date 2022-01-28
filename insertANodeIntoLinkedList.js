@@ -1,60 +1,49 @@
 // This is an input class. Do not edit.
 class LinkedList {
-    constructor(value) {
-        this.value = value;
-        this.next = null;
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
+  addMany(values) {
+    let current = this;
+    while (current.next !== null) {
+      current = current.next;
     }
-    addMany(values) {
-        let current = this;
-        while (current.next !== null) {
-            current = current.next;
-        }
-        for (const value of values) {
-            current.next = new LinkedList(value);
-            current = current.next;
-        }
-        return this;
+    for (const value of values) {
+      current.next = new LinkedList(value);
+      current = current.next;
     }
+    return this;
+  }
 
-    getNodesInArray() {
-        const nodes = [];
-        let current = this;
-        while (current !== null) {
-            nodes.push(current.value);
-            current = current.next;
-        }
-        return nodes;
+  getNodesInArray() {
+    const nodes = [];
+    let current = this;
+    while (current !== null) {
+      nodes.push(current.value);
+      current = current.next;
     }
+    return nodes;
+  }
 }
 
 function insertANodeIntoLinkedList(linkedList, data, position) {
-    let one = linkedList;
-    let temp = null;
-    let count = 0;
-    let newNode = new LinkedList(data);
- 
-    while (one !== null) {
-             console.log(one.getNodesInArray());
-        if (count == position) {
-                 console.log(one.getNodesInArray());
-            temp = one;
-            one = newNode;
-            one.next = temp;
-                 console.log(one.getNodesInArray());
-            count++;
-        } 
-        else {
-            if(one.next !== null) {
-                count++;
-                // console.log(one.getNodesInArray());
-                temp = one;
-                one = one.next;
-                // console.log(one.getNodesInArray());
-            }
-        }
-    }
-console.log(set)
-    return one;
+  let one = linkedList;
+  let temp = null;
+  let count = 0;
+  let newNode = new LinkedList(data);
+
+  while (one !== null && count < position) {
+    count++;
+    one = one.next;
+  }
+  if (count == position) {
+    temp = one;
+    one = newNode;
+    one.next = temp;
+    count++;
+  }
+  return one;
 }
 
 // Do not edit the lines below.
