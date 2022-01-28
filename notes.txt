@@ -1,7 +1,0 @@
-
-
-
-
-Look up for palindroms
-
-Given a list of lists, find the smallest interval of numbers that includes a number from each list.

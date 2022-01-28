@@ -21,4 +21,5 @@ let array1 = [2, 3, 4, 6, 5, 7, 8, 9, 4];
 
 let seq1 = [9, 4];
 
+
 console.log(isValidSubsequence(array1, seq1));
