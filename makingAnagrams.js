@@ -5,9 +5,6 @@ function makeAnagram(a, b) {
     let count = 0;
 
     for (let i = 0; i < str1.length; i++) {
-
-
-
         if (hGram[str1[i]]) {
             hGram[str1[i]]++;
         } else {
@@ -16,7 +13,11 @@ function makeAnagram(a, b) {
     }
 
     for (let i = 0; i < str2.length; i++) {
-        hGram[str2[i]] > 0 ? hGram[str2[i]]-- : count++;
+        if (hGram[str2[i]] > 0) {
+            hGram[str2[i]]--;
+        } else {
+            count++;
+        }
     }
 
     for (let key in hGram) {
@@ -30,3 +31,6 @@ function makeAnagram(a, b) {
 let abc = "tester";
 let cde = "thisIsAtester";
 makeAnagram(cde, abc);
+
+
+
